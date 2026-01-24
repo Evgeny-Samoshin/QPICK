@@ -4,12 +4,10 @@ type Props = {
   children: React.ReactNode,
 }
 
-const Layout = ({children}: Props) => {
+export const HeaderLayout = ({children}: Props) => {
   return (
     <div className={style.container}>
       {children}
     </div>
   )
 }
-
-export default Layout

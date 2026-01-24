@@ -1,0 +1,20 @@
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 80px;
+}
+
+.cardsLayout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.categoryTitle {
+  font-weight: 600;
+  font-size: 20px;
+  color: #838383;
+  margin-bottom: 20px;
+}

@@ -1,17 +1,17 @@
-import Layout from '../Layout/Layout';
+import { HeaderLayout } from './HeaderLayout/HeaderLayout';
 import { Basket } from './Basket/Basket';
 import { Favorit } from './Favorit/Favorit';
-import {Logo} from './Logo/Logo';
+import { Logo } from './Logo/Logo';
 import style from './style.module.css';
 
 export const Header = () => {
   return (
     <header className={style.header}>
-      <Layout>
+      <HeaderLayout>
         <Logo/>
         <Favorit />
         <Basket />
-      </Layout>
+      </HeaderLayout>
       
     </header>
   )

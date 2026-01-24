@@ -1,0 +1,67 @@
+.card {
+  width: 350px;
+  border-radius: 30px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.cardImgWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.contentWrapper {
+  padding: 6px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.cardTitle {
+}
+
+.priceWrapper {
+  justify-self: end;
+}
+
+.cardPrice {
+  color: #ffa542;
+
+}
+
+.cardDiscount {
+  font-size: 13px;
+  text-decoration: line-through;
+  color: #ffce7f;
+}
+
+.ratingWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rating {
+  color: #838383;
+}
+
+.btn {
+  border: none;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 17px;
+  font-family: inherit;
+  color: black;
+  cursor: pointer;
+  transition: color 0.25s;
+  justify-self: end;
+  align-self: end;
+}
+
+.btn:hover {
+  color: #ffa542;
+}
