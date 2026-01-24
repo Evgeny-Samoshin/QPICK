@@ -6,3 +6,7 @@
   grid-column-start: 4;
   grid-column-end: 5;
 }
+
+.link:hover>svg>path {
+  fill: #ffa542;
+}
