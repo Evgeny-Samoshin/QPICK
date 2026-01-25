@@ -1,6 +1,6 @@
 import { HeaderLayout } from './HeaderLayout/HeaderLayout';
-import { Basket } from './Basket/Basket';
-import { Favorit } from './Favorit/Favorit';
+import { BasketIcon } from './BasketIcon/BasketIcon';
+import { FavoritIcon } from './FavoritIcon/FavoritIcon';
 import { Logo } from './Logo/Logo';
 import style from './style.module.css';
 
@@ -9,8 +9,8 @@ export const Header = () => {
     <header className={style.header}>
       <HeaderLayout>
         <Logo/>
-        <Favorit />
-        <Basket />
+        <FavoritIcon />
+        <BasketIcon />
       </HeaderLayout>
       
     </header>

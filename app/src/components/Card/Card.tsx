@@ -1,5 +1,5 @@
 import style from './style.module.css';
-import img from '../../../assets/1.jpg';
+import img from '../../assets/1.jpg';
 
 export const Card = () => {
   return (

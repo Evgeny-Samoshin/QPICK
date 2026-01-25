@@ -1,15 +1,16 @@
+import { Card } from '../Card/Card';
 import style from './style.module.css';
 
-type Props = {
-  children: React.ReactNode,
-}
-
-export const Category = ({children}: Props) => {
+export const Category = () => {
   return (
     <section className={style.container}>
       <h2 className={style.categoryTitle}>Наушники</h2>
       <div className={style.cardsLayout}>
-        {children}
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
       </div>
     </section>
   )

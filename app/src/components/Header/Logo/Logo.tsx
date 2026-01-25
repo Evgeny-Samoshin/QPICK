@@ -1,10 +1,11 @@
 import style from './style.module.css';
 import logo from './img/logo.svg';
+import { Link } from 'react-router';
 
 export const Logo = () => {
   return (
-    <a className={style.link} href='/'>
+    <Link className={style.link} to="/">
       <img className={style.logo} src={logo} alt="Логотип интернет-магазина QPICK" />
-    </a>
+    </Link>
   )
 }

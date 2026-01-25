@@ -1,6 +1,4 @@
 .footer {
-  max-width: 1140px;
-  margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
   font-weight: 400;
@@ -9,6 +7,9 @@
 }
 
 .container {
+  max-width: 1140px;
+  margin: 0 auto;
+
   background-color: #fff;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
