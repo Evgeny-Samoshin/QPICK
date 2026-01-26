@@ -1,16 +1,26 @@
 import { Card } from '../Card/Card';
 import style from './style.module.css';
+import { LIST } from '../../_LIST/LIST';
+import { generateRandomId } from '../../utils/generateRandomId';
 
-export const Category = () => {
+type Props = {
+  children: React.ReactNode,
+};
+
+export const Category = ({ children }: Props) => {
   return (
     <section className={style.container}>
-      <h2 className={style.categoryTitle}>Наушники</h2>
+      <h2 className={style.categoryTitle}>{children}</h2>
       <div className={style.cardsLayout}>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {LIST.map(item => {
+          if (item.category === children) {
+            return <Card key={generateRandomId()}
+              img={item.img}
+              name={item.name}
+              price={item.price}
+              rate={item.rate} />
+          }
+        })}
       </div>
     </section>
   )
