@@ -1,0 +1,86 @@
+.card {
+  border-radius: 30px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr auto;
+  column-gap: 24px;
+  row-gap: 19px;
+  position: relative;
+}
+
+.cardImgWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 146px;
+  max-height: 136px;
+}
+
+.contentWrapper {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cardTitle {}
+
+.priceWrapper {
+  justify-self: end;
+}
+
+.cardPrice {
+  font-size: 15px;
+  color: #aaa;
+}
+
+.cardForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input[type=number]:active,
+input[type=number]:focus,
+input[type=number]:focus-visible {
+  outline: none;
+}
+
+.basketCardInput {
+  width: 30px;
+  padding: 0;
+  border: none;
+  text-align: center;
+}
+
+.cardFormBtn,
+.deleteBtn {
+  padding: 0;
+  line-height: 0;
+}
+
+.deleteBtn {
+  position: absolute;
+  top: 18px;
+  right: 28px;
+}
+
+.totalCardPrice {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

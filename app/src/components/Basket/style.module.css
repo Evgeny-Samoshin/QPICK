@@ -1,0 +1,49 @@
+.container {
+  margin-bottom: 80px;
+}
+
+.basketLayout {
+  display: grid;
+  grid-template-columns: 57% 32%;
+  column-gap: 11%;
+}
+
+.cardsLayout {
+  display: grid;
+  row-gap: 30px;
+}
+
+.pageTitle {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.orderWrapper {
+  border-radius: 30px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  background: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  color: #000;
+  align-self: start;
+}
+
+.orderSumWrapper {
+  padding: 22px 16px 15px 21px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.orderSum {}
+
+.orderBtn {
+  width: 100%;
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
+  background-color: #101010;
+  font-size: 17px;
+  text-align: center;
+  color: #fff;
+}
