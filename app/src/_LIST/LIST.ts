@@ -15,28 +15,28 @@ export const LIST = [
   },
   {
     img: '/assets/3.jpg',
-    name: 'Apple BYZ S852I',
+    name: 'Apple BYZ S853I',
     price: 2978,
     rate: 4.3,
     category: 'Наушники'
   },
   {
     img: '/assets/4.jpg',
-    name: 'Apple BYZ S852I',
+    name: 'Apple BYZ S842I',
     price: 2978,
     rate: 4.7,
     category: 'Беспроводные Наушники'
   },
   {
     img: '/assets/5.jpg',
-    name: 'Apple BYZ S852I',
+    name: 'Apple BYZ S752I',
     price: 2978,
     rate: 4.7,
     category: 'Наушники'
   },
   {
     img: '/assets/6.jpg',
-    name: 'Apple BYZ S852I',
+    name: 'Apple S852I',
     price: 2978,
     rate: 4.7,
     category: 'Беспроводные Наушники'
