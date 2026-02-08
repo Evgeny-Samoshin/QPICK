@@ -1,6 +1,5 @@
-import { useContext, type Dispatch, type SetStateAction } from 'react';
 import style from './style.module.css';
-import { CardContext, type setterProps, type StorageType } from '../../context/cardContext';
+import { useStorageContext } from '../../context/useStorageContext';
 
 type Props = {
   img: string,
@@ -8,21 +7,20 @@ type Props = {
   price: number,
   rate: number,
   quantity: number,
-  setter: Dispatch<SetStateAction<Array<setterProps>>>,
 }
 
-export const Card: React.FC<Props> = ({ img, name, price, rate, quantity, setter }) => {
+export const Card = ({ img, name, price, rate, quantity }: Props) => {
 
-  const storage: StorageType[] = useContext(CardContext);
+  const {storage, setStorage} = useStorageContext();
 
   const clickHandler = (e: React.MouseEvent) => {
     e.preventDefault();
     /* Проверяем есть ли что-то в хранилище? */
     if (storage.length > 0) {
-    /* Проверяем есть ли уже такой товар в хранилище */
+      /* Проверяем есть ли уже такой товар в хранилище */
       const copyIndex = storage.findIndex(item => item.name === name);
       if (copyIndex !== -1) {
-    /* Если есть, то создаем новый экземпляр хранилища с уеличенным числом товаров и обновляем state */
+        /* Если есть, то создаем новый экземпляр хранилища с уеличенным числом товаров и обновляем state */
         const arr = storage.map((item) => {
           if (item.name === name) {
             item.quantity += 1;
@@ -31,10 +29,10 @@ export const Card: React.FC<Props> = ({ img, name, price, rate, quantity, setter
             return item;
           }
         })
-        setter(arr);
+        setStorage(arr);
       } else {
-    /* Если товара с таким именем нет в хранилище, то просто добавляем товар */
-        setter(prev => [
+        /* Если товара с таким именем нет в хранилище, то просто добавляем товар */
+        setStorage(prev => [
           ...prev,
           {
             img,
@@ -45,8 +43,8 @@ export const Card: React.FC<Props> = ({ img, name, price, rate, quantity, setter
         ])
       }
     } else {
-    /* Если хранилище пустое, то просто добавляем товар */
-      setter(prev => [
+      /* Если хранилище пустое, то просто добавляем товар */
+      setStorage(prev => [
         ...prev,
         {
           img,

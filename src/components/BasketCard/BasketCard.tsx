@@ -1,19 +1,11 @@
-import { useContext, useState, type Dispatch, type SetStateAction } from 'react';
+import { useState } from 'react';
 import style from './style.module.css';
-import { CardContext, type setterProps, type StorageType } from '../../context/cardContext';
+import { useStorageContext } from '../../context/useStorageContext';
+import type { StorageType } from '../../context/cardContext';
 
-type Props = {
-  img: string,
-  name: string,
-  price: number,
-  quantity: number,
-  setter: Dispatch<SetStateAction<Array<setterProps>>>,
-}
-
-export const BasketCard: React.FC<Props> = ({ img, name, price, quantity, setter }) => {
-  const storage: StorageType[] = useContext(CardContext);
-  const [itemCount] = useState(quantity);
-  const [totalCardPrice, setTotalCardPrice] = useState(itemCount * price);
+export const BasketCard = ({ img, name, price, quantity }: StorageType) => {
+  const {storage, setStorage} = useStorageContext();
+  const [totalCardPrice, setTotalCardPrice] = useState(quantity * price);
 
 
   const plusItem = (e: React.MouseEvent) => {
@@ -27,12 +19,12 @@ export const BasketCard: React.FC<Props> = ({ img, name, price, quantity, setter
         return item;
       };
     });
-    setter(arr);
+    setStorage(arr);
   };
 
   const minusItem = (e: React.MouseEvent) => {
     e.preventDefault();
-    if (itemCount > 1) {
+    if (quantity > 1) {
       setTotalCardPrice(prevPrice => prevPrice - price);
       const arr = storage.map((item) => {
         if (item.name === name) {
@@ -42,7 +34,7 @@ export const BasketCard: React.FC<Props> = ({ img, name, price, quantity, setter
           return item;
         };
       });
-      setter(arr);
+      setStorage(arr);
     };
   };
 
@@ -57,14 +49,14 @@ export const BasketCard: React.FC<Props> = ({ img, name, price, quantity, setter
           return item;
         }
       });
-      setter(arr);
+      setStorage(arr);
     };
   };
 
   const removeItem = (e: React.MouseEvent) => {
     e.preventDefault();
     const updatedStorage = storage.filter(item => item.name !== name);
-    setter(updatedStorage);
+    setStorage(updatedStorage);
   };
 
   return (
@@ -89,7 +81,7 @@ export const BasketCard: React.FC<Props> = ({ img, name, price, quantity, setter
           type="number"
           name="basketCardInput"
           id="basketCardInput"
-          value={itemCount} />
+          value={quantity} />
         <button className={style.cardFormBtn} onClick={plusItem}>
           <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="15" cy="15" r="15" fill="#FFCE7F" />

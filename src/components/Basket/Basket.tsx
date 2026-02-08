@@ -1,15 +1,10 @@
-import { useContext, type Dispatch, type SetStateAction } from 'react';
+import { useStorageContext } from '../../context/useStorageContext';
 import { generateRandomId } from '../../utils/generateRandomId';
 import { BasketCard } from '../BasketCard/BasketCard';
 import style from './style.module.css';
-import { CardContext, type setterProps, type StorageType } from '../../context/cardContext';
 
-type Props = {
-  setter: Dispatch<SetStateAction<Array<setterProps>>>
-}
-
-export const Basket = ({setter}: Props) => {
-  const storage: StorageType[] = useContext(CardContext);
+export const Basket = () => {
+  const {storage} = useStorageContext();
   const calculatedTotalPrice = storage.reduce((acc, curr) => {
     return acc += curr.price * curr.quantity
   }, 0);  
@@ -26,7 +21,6 @@ export const Basket = ({setter}: Props) => {
               name={item.name}
               price={item.price}
               quantity={item.quantity}
-              setter={setter}
             />
           )}
         </div>
@@ -40,4 +34,4 @@ export const Basket = ({setter}: Props) => {
       </div>
     </section>
   )
-}
+};
