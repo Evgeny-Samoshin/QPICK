@@ -1,8 +1,5 @@
+import type { Props } from '../../../context/cardContext';
 import style from './style.module.css';
-
-type Props = {
-  children: React.ReactNode,
-}
 
 export const HeaderLayout = ({children}: Props) => {
   return (

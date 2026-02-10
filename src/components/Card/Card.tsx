@@ -1,17 +1,10 @@
 import style from './style.module.css';
 import { useStorageContext } from '../../context/useStorageContext';
+import type { CardType } from '../../context/cardContext';
 
-type Props = {
-  img: string,
-  name: string,
-  price: number,
-  rate: number,
-  quantity: number,
-}
+export const Card = ({ img, name, price, rate, quantity }: CardType) => {
 
-export const Card = ({ img, name, price, rate, quantity }: Props) => {
-
-  const {storage, setStorage} = useStorageContext();
+  const [storage, setStorage] = useStorageContext();
 
   const clickHandler = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -58,7 +51,7 @@ export const Card = ({ img, name, price, rate, quantity }: Props) => {
 
 
   return (
-    <div className={style.card}>
+    <li className={style.card}>
       <div className={style.cardImgWrapper}>
         <img src={`/src${img}`} alt={`"Проводные наушники ${name}"`} />
       </div>
@@ -79,6 +72,6 @@ export const Card = ({ img, name, price, rate, quantity }: Props) => {
         </div>
         <button className={style.btn} onClick={clickHandler}>Купить</button>
       </div>
-    </div>
+    </li>
   )
 }

@@ -19,7 +19,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <CardContext value={{storage, setStorage}}>
+      <CardContext value={[storage, setStorage]}>
         <Header />
         <main className={style.main}>
           <div className={style.container}>

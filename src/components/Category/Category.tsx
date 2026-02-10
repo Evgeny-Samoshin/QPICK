@@ -8,7 +8,7 @@ export const Category = ({ children }: Props) => {
   return (
     <section className={style.container}>
       <h2 className={style.categoryTitle}>{children}</h2>
-      <div className={style.cardsLayout}>
+      <ul className={style.cardsLayout}>
         {LIST.map(item => {
           if (item.category === children) {
             return <Card key={generateRandomId()}
@@ -19,7 +19,7 @@ export const Category = ({ children }: Props) => {
               quantity={1} />
           }
         })}
-      </div>
+      </ul>
     </section>
   )
 }

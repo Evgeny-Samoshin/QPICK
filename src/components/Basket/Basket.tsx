@@ -4,7 +4,7 @@ import { BasketCard } from '../BasketCard/BasketCard';
 import style from './style.module.css';
 
 export const Basket = () => {
-  const {storage} = useStorageContext();
+  const [storage] = useStorageContext();
   const calculatedTotalPrice = storage.reduce((acc, curr) => {
     return acc += curr.price * curr.quantity
   }, 0);  
@@ -13,7 +13,7 @@ export const Basket = () => {
     <section className={style.container}>
       <h2 className={style.pageTitle}>Корзина</h2>
       <div className={style.basketLayout}>
-        <div className={style.cardsLayout}>
+        <ul className={style.cardsLayout}>
           {storage.map(item =>
             <BasketCard
               key={generateRandomId()}
@@ -23,7 +23,7 @@ export const Basket = () => {
               quantity={item.quantity}
             />
           )}
-        </div>
+        </ul>
         <div className={style.orderWrapper}>
           <div className={style.orderSumWrapper}>
             <span>ИТОГО</span>
